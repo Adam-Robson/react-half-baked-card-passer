@@ -6,11 +6,12 @@ import { useState, useContext } from 'react';
 import ExecutePassButton from './components/ExecutePassButton';
 
 function App() {
-  const { deck, setDeck } = useContext(GameContext);
-  const [playerOneHand, setPlayerOneHand] = useState([]);
+
+  const { deck, setDeck, playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand, playerThreeHand, setPlayerThreeHand } = useContext(GameContext);
+
+
   const [selectedCard, setSelectedCard] = useState();
-  const [playerTwoHand, setPlayerTwoHand] = useState([]);
-  const [playerThreeHand, setPlayerThreeHand] = useState([]);
+
   const [from, setFrom] = useState('deck');
   const [to, setTo] = useState(1);
 
