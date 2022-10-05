@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import initialCards from '../cards-data';
 
 const GameContext = createContext();
@@ -11,21 +11,18 @@ const GameProvider = ({ children }) => {
   const [from, setFrom] = useState('deck');
   const [selectedCard, setSelectedCard] = useState();
   const [to, setTo] = useState(1);
-  return (
-    <GameContext.Provider value={{ deck, setDeck, playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand, playerThreeHand, setPlayerThreeHand, from, setFrom, selectedCard, setSelectedCard, to, setTo }}>
-      {children}
-    </GameContext.Provider>
-  );
+  return <GameContext.Provider
+    value={ { deck, setDeck, playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand, playerThreeHand, setPlayerThreeHand, from, setFrom, selectedCard, setSelectedCard, to, setTo } }>
+    { children }
+  </GameContext.Provider>;
 };
 
 const useGameContext = () => {
   const context = useContext(GameContext);
-
   if (context === undefined) {
-    throw new Error('useGameContext must be used within a GameProvider');
+    throw new Error('useContext must be used within a GameProvider');
   }
-
   return context;
 };
 
-export { GameProvider, useGameContext };
+export { GameProvider, GameContext };
