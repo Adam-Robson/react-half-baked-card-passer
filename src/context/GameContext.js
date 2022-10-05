@@ -25,4 +25,4 @@ const useGameContext = () => {
   return context;
 };
 
-export { GameProvider, GameContext };
+export { GameProvider, GameContext, useGameContext };
