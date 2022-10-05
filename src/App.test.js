@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { GameProvider } from './context/GameContext';
 
 test('renders different players', () => {
   render(<GameProvider><App /></GameProvider>);
