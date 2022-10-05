@@ -17,11 +17,13 @@ function App() {
     playerThreeHand,
     setPlayerThreeHand,
     from,
-    setFrom
+    setFrom,
+    selectedCard,
+    setSelectedCard
   } = useContext(GameContext);
 
 
-  const [selectedCard, setSelectedCard] = useState();
+
 
 
   const [to, setTo] = useState(1);
