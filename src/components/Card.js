@@ -7,7 +7,7 @@ const suitMap = {
   clubs: '♣️',
   diamonds: '♦️',
 };
-
+//comment to push to pr again
 export default function Card({ card, player }) {
   const { setFrom, selectedCard, setSelectedCard } = useContext(GameContext);
 
