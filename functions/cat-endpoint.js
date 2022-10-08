@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 const fetch = require('node-fetch');
 require('dotenv').config();
 
@@ -7,9 +9,9 @@ exports.handler = async (event, context) => {
     const response = await fetch('https://cat-fact.herokuapp.com/facts');
     const data = await response.json();
     const json = JSON.stringify({ data });
-    
-    return { 
-      statusCode: 200, 
+
+    return {
+      statusCode: 200,
       body: json
     };
   } catch (error) {
